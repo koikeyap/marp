@@ -1,0 +1,383 @@
+/* @theme macnica */
+
+@import 'default';
+
+/* 基本設定 */
+section {
+  width: 1280px;
+  height: 720px;
+  padding: 40px 60px;
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'メイリオ', sans-serif;
+  background: linear-gradient(135deg, #7B68A8 0%, #1B3F80 50%, #0D2B5A 100%);
+  color: #FFFFFF;
+}
+
+/* タイトルスライド */
+section.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.title h1 {
+  font-size: 72px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  margin-bottom: 80px;
+}
+
+section.title p {
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+section.title p.date {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+section.title p.author {
+  font-size: 28px;
+}
+
+/* ロゴ */
+section::after {
+  content: '';
+  position: absolute;
+  bottom: 40px;
+  left: 60px;
+  width: 180px;
+  height: 50px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50"><text x="0" y="35" font-family="Arial" font-size="36" font-weight="bold" fill="white">MACNICA</text></svg>') no-repeat;
+  background-size: contain;
+}
+
+/* コピーライト */
+section::before {
+  content: '©Macnica,Inc.';
+  position: absolute;
+  bottom: 40px;
+  right: 60px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ページ番号 */
+section:not(.title)::after {
+  content: attr(data-marpit-pagination);
+  position: absolute;
+  bottom: 40px;
+  right: 100px;
+  font-size: 32px;
+  color: #FFFFFF;
+}
+
+/* 通常スライドのヘッダー */
+section:not(.title) h1 {
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+section:not(.title) h2 {
+  font-size: 36px;
+  font-weight: 400;
+  margin: 30px 0 20px 0;
+}
+
+/* リスト */
+section ul, section ol {
+  font-size: 28px;
+  line-height: 1.8;
+  margin: 20px 0;
+}
+
+section li {
+  margin-bottom: 15px;
+}
+
+/* カラーパレット用のクラス */
+.color-main {
+  color: #1B3F80;
+}
+
+.color-sub {
+  color: #4E6AA4;
+}
+
+.color-accent1 {
+  color: #7E1082;
+}
+
+.color-accent2 {
+  color: #D9BD00;
+}
+
+.color-attention {
+  color: #AE6CB0;
+}
+
+.color-action {
+  color: #C03A22;
+}
+
+/* 背景色バリエーション */
+section.light {
+  background: #F6F6F6;
+  color: #505050;
+}
+
+section.light h1, section.light h2 {
+  color: #1B3F80;
+}
+
+section.light::before {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* カラーボックス */
+.box {
+  padding: 20px 30px;
+  border-radius: 8px;
+  margin: 20px 0;
+  font-size: 24px;
+}
+
+.box-primary {
+  background: #1B3F80;
+  color: #FFFFFF;
+}
+
+.box-secondary {
+  background: #4E6AA4;
+  color: #FFFFFF;
+}
+
+.box-accent {
+  background: #7E1082;
+  color: #FFFFFF;
+}
+
+.box-yellow {
+  background: #D9BD00;
+  color: #505050;
+}
+
+.box-attention {
+  background: #AE6CB0;
+  color: #FFFFFF;
+}
+
+.box-action {
+  background: #C03A22;
+  color: #FFFFFF;
+}
+
+.box-gray {
+  background: #BFBFBF;
+  color: #505050;
+}
+
+/* 比較テーブル */
+.comparison {
+  display: flex;
+  gap: 40px;
+  margin: 40px 0;
+}
+
+.comparison-item {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.comparison-header {
+  padding: 20px;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.comparison-header.sample-a {
+  background: #1B3F80;
+}
+
+.comparison-header.sample-b {
+  background: #7E1082;
+}
+
+.comparison-content {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #505050;
+}
+
+.comparison-content h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.comparison-content h3::before {
+  content: '◆';
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.comparison-item.sample-a h3::before {
+  color: #1B3F80;
+}
+
+.comparison-item.sample-b h3::before {
+  color: #7E1082;
+}
+
+/* フローチャート */
+.flowchart {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.flow-item {
+  padding: 20px 40px;
+  border: 2px solid #FFFFFF;
+  border-radius: 8px;
+  font-size: 28px;
+  text-align: center;
+  min-width: 120px;
+}
+
+.flow-item.highlight {
+  background: #1B3F80;
+  border-color: #1B3F80;
+}
+
+.flow-arrow {
+  font-size: 32px;
+  color: #FFFFFF;
+}
+
+/* 吹き出し */
+.callout {
+  position: relative;
+  background: rgba(78, 106, 164, 0.9);
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-size: 20px;
+  margin: 20px 0;
+  display: inline-block;
+}
+
+.callout::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 30px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: rgba(78, 106, 164, 0.9) transparent transparent transparent;
+}
+
+/* 強調表示 */
+.highlight-text {
+  background: #D9BD00;
+  color: #505050;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* コード表示 */
+section pre {
+  background: rgba(0, 0, 0, 0.8);
+  color: #FFFFFF;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+section code {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Consolas', 'Monaco', monospace;
+}
+
+/* テーブル */
+section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
+  font-size: 24px;
+}
+
+section th {
+  background: #1B3F80;
+  color: #FFFFFF;
+  padding: 15px;
+  text-align: left;
+  font-weight: 500;
+}
+
+section td {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+section.light table th {
+  background: #4E6AA4;
+}
+
+section.light table td {
+  background: #F0F0F0;
+  color: #505050;
+  border-bottom: 1px solid #D0D0D0;
+}
+
+/* 画像配置 */
+section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* 2カラムレイアウト */
+.columns {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.column {
+  flex: 1;
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
