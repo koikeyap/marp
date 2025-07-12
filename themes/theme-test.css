@@ -1,0 +1,57 @@
+/* @theme theme-test */
+/* 既存テーマを継承する場合は @import を使う（ここでは default） */
+@import 'default';
+
+/*―― グローバル変数（カラーパレットなど） ――*/
+:root {
+  --color-primary: #005bc5;
+  --color-accent : #ff6b00;
+  --color-bg     : #ffffff;
+  --color-text   : #222222;
+  --font-base    : 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono    : 'JetBrains Mono', monospace;
+}
+
+/*―― スライド全体設定 ――*/
+section {
+  background : var(--color-bg);
+  color      : var(--color-text);
+  font-family: var(--font-base);
+  padding    : 2rem;
+  /* 16:9, 1280×720 を明示 */
+  /* @size 16:9 1280px 720px */
+}
+
+/*―― 見出し ――*/
+h1, h2, h3 {
+  margin: 0 0 0.5em;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+h1 { font-size: 2.4em; color: var(--color-primary); }
+h2 { font-size: 1.8em; color: var(--color-primary); }
+h3 { font-size: 1.4em; }
+
+/*―― 箇条書き ――*/
+ul, ol {
+  padding-left: 2rem;
+}
+
+/*―― コードブロック ――*/
+code, pre {
+  font-family: var(--font-mono);
+  background : #f6f8fa;
+  padding    : .2em .4em;
+  border-radius: 4px;
+}
+
+/*―― ページ番号 ――*/
+section::after {
+  position: absolute;
+  content : attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+  bottom  : 1.2rem;
+  right   : 2rem;
+  font-size: 0.8em;
+  color   : #888;
+}
