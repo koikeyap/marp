@@ -156,8 +156,6 @@
      font-weight: 600;
    }
 
-   /* 削除: light クラスは不要に */
-
    /* Agenda スタイル */
    section.agenda ol {
      font-size: 32px;
